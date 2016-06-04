@@ -115,7 +115,7 @@ events:
   - image: "/img/timeline/baracktocat.jpg"
     date: "May 2011 - Present"
     description: "Freelance Web, PHP API Developer"
-  - image: "/img/timeline/duke_scientist.jpg"
+  - image: "/img/timeline/duke_scientist.png"
     date: "January 2011 - May 2013"
     description: "JavaEE Developer"
 
