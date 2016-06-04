@@ -112,7 +112,7 @@ events:
   - image: "/img/timeline/duke_blocks.png"
     date: "November 2014 - Present"
     description: "Senior Java Developer"
-  - image: "/img/timeline/baracktocat.jpg"
+  - image: "/img/timeline/freelancer.jpg"
     date: "May 2011 - Present"
     description: "Freelance Web, PHP API Developer"
   - image: "/img/timeline/duke_scientist.png"
