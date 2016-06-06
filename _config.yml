@@ -110,13 +110,13 @@ syntax-highlight: True
 
 events:
   - image: "/img/timeline/duke_blocks.png"
-    date: "November 2014 - Present"
+    date: "Nov 2014 - Present"
     description: "Senior Java Developer"
   - image: "/img/timeline/freelancer.jpg"
     date: "May 2011 - Present"
     description: "Freelance Web, PHP API Developer"
   - image: "/img/timeline/duke_scientist.png"
-    date: "January 2011 - May 2013"
+    date: "Jan 2011 - May 2013"
     description: "JavaEE Developer"
 
 # First image of the Timeline
