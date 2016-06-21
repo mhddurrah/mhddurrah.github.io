@@ -1,0 +1,133 @@
+<html>
+<head>
+	<link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/styles/tomorrow.min.css">
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.4.0/highlight.min.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<meta charset="utf8">
+</head>
+<body style="font-size:16px; margin: 48px 48px">
+	<div style="display: inline;color:white;background-color:#bbbbbb; padding:2px">Mohamd_Dorra.scala ×</div>
+	<div style="display: inline;color:white;background-color:#dddddd; padding:2px">Mohamd_Dorra.java ×</div>
+	<div style="display: inline;color:white;background-color:#dddddd; padding:2px">Skills.scala ×</div>
+	<pre style="background-color:#dddddd; margin-top:0">
+	<code class="scala" style="background-color:#dddddd">
+import Traits._
+import Skills.{Java, Php}
+
+SoftwareDeveloper[L <: Java with Php] extends HumanBeing[Syrian] with SoftwareEngineer {
+
+  import java.util.{Calendar, Date}
+
+  val birthdate = Calendar.getInstance().set(1985, Calendar.NOVEMBER, 15)
+
+  val address = "Esenyurt, Istanbul, Turkey"
+
+  object ContactInfo {
+    val email = "mhd.durrah@gmail"
+    val mobile: BigDecimal = BigDecimal(0090_553_118_6773)
+  }
+
+  val social = Map("Linkedin" -> "https://www.linkedin.com/in/mhddurrah", "Github" -> "https://www.github.com/mhddurrah")
+
+  val motivation = "Being a software engineer means that you must be as flexible as possible to keep up with new technologies."
+
+  val summary =
+    """
+	    A Software developer with 5 years of industry experience with Java, PHP, Web,
+      and enterprise development, Resourceful in managing all aspects of the
+      requirement study & analysis, suggesting technology-based solutions, design,
+      development, testing, deployment and implementation of business solutions
+    	"""
+  val more = "I am enthusiast to java technologies and jvm languages in general, Vertx, scala, spark and hadoop."
+
+  def education() = {
+    (new Education).of("Bachelor of Computer Science")
+      .in("Faculty of IT").university("Damascus University").from(2004).to(2010)
+
+  }
+
+  def experience() = {
+    Seq(
+      (new Position).at("Kancy").title("Senior Java Developer")
+        .from("Nov 2014").to(new Date).location("Istanbul, Turkey")
+        .responsibilities(
+          """
+                - Contribute in adapting OpenHAB (Home Automation Bus) built over
+                      Eclipse Equinox (OSGi implementation)
+                - Participate in Analysis, Design and Development of kancy system runtime
+                      with EclipseRT, JAX-WS and REST-api with Jersey
+                - Android backend and frontend design and development, messaging with
+                      MQTT, REST clients with Volley and ION, database access with GreenDAO.
+          """),
+      (new Position).at("Freelancing").title("Web, API & Android Developer")
+        .from("Jan 2011").to(new Date)
+        .responsibilities(
+          """
+                - Development of several websites and php web services with Laravel
+                      framework, AngularJS, Smarty Template engine, wordpress templates and plugins
+                        * http://easylease.sa
+                        * http://kiyadah.com/
+                        * http://tanzeemuae.com/
+                - Participate in Customization and Development of Zurmo® CRM built with YII framework
+                      * http://uae.sellanycar.com/
+                - Android developer
+                  * Argaam Streamer: Saudi Arabia Stock Market, Business & Financial News mobile app
+          """),
+      (new Position).at("Invest4all\u200B/").title("Java EE Application Developer")
+        .from("Jan 2011").to("May 2013").location("Damascus, Syria")
+        .responsibilities(
+          """
+                - Contribute in System Analysis and Development of business process
+                        management system built with EJB, webservices and Hibernate in
+                        backend; JSF and Primefaces components for frontend
+                - Workflow designer path designer that can be used by business process
+                        owners to easily create a workflow definition through a web-based
+                        user interface (Javascript, RaphaëlJS)
+                - RBAC security model implementation
+          """)
+    )
+  }
+
+  def languages = {
+    mutable.Map(
+      "Arabic" -> Language.NATIVE,
+      "English" -> Language.PROFESSIONAL_WORKING_PROFICIENCY,
+      "Turkish" -> Language.ELEMENTARY
+    )
+  }
+
+  def specialities = {
+    import Skills._
+    mutable.Map(Java -> 95, JSF -> 90, Hibernate -> 75, OSGi -> 80, Spring -> 60, Android -> 80, Laravel -> 90, Wordpress -> 85)
+  }
+
+  def skills = {
+    import Skills._
+    import mutable._
+    Set(
+      Set(DesignPatterns, JavaSE, JavaEE) OSGi, Scala, JSF, Primefaces),
+      Set(EJB, Hibernate, JPA, Spring, Jersey, Servlets, JUnit, Android),
+      Set(Wordpress, Magento, Laravel, YII, AngularJS, Smarty, JQuery, YUI),
+      Set(MongoDB, MySQL, Neo4J, Oracle),
+      Set(Java3D, VRML, RaphaëlJS),
+      Set(Subversion, Git),
+      Set(WebSockets, MQTT),
+      Set(Hadoop, Spark, Vertx)
+    )
+  }
+
+  def references = {
+    Set(
+    	(new Reference).name("Mr. Tammam Fadel")
+      	.position("Invest4all project manager")
+      	.email("tammam.fadel.ca@gmail.com").mobile(new BigDecimal(001 _514_967_7104))
+      )
+  }
+
+  def open = {
+    true
+  }
+}
+	</code></pre>
+</body>
+</html>
