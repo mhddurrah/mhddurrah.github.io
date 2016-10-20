@@ -13,7 +13,7 @@
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#resume'){
 				  var strconfirm = confirm("I am a developer :D ?");
-				    if (strconfirm == false) {
+				    if (strconfirm != true) {
 				    	$('.nav-tabs a[href="#pdf-resume"]').tab('show')
 				    }
 			  }
