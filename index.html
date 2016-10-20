@@ -12,7 +12,7 @@
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#hash'){
-				  $('#modal').modal('show');
+				  $('#myModal').modal('show');
 			  }
 			});
 		});
@@ -21,7 +21,7 @@
 	<meta charset="utf8">
 </head>
 <body style="font-size:16px; margin: 48px 48px; display:inline">
-	<div id="modal" class="modal fade" tabindex="-1" role="dialog">
+	<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
 	  <div class="modal-dialog" role="document">
 	    <div class="modal-content">
 	      <div class="modal-header">
