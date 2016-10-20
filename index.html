@@ -12,10 +12,10 @@
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#resume'){
-				  var strconfirm = confirm("Are you sure you want to delete?");
-    if (strconfirm == true) {
-        return true;
-    }
+				  var strconfirm = confirm("Are you sure you are a developer :D ?");
+				    if (strconfirm) {
+					alert('hi');
+				    }else alert('bye');
 			  }
 			});
 		});
