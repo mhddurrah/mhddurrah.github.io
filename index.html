@@ -11,7 +11,7 @@
 	<script>hljs.initHighlightingOnLoad();
 		$(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-			  alert('hi'+e.relatedTarget.id);
+			  for(var k in e.relatedTarget)alert(k);
 			});
 		})();
 	</script>
