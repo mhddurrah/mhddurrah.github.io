@@ -12,9 +12,9 @@
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#resume'){
-				  var strconfirm = confirm("Are you sure you are a developer :D ?");
+				  var strconfirm = confirm("I am a developer :D ?");
 				    if (strconfirm == false) {
-				    	$('.tab-pane a[href="#pdf-resume"]').tab('show')
+				    	$('.nav-tabs a[href="#pdf-resume"]').tab('show')
 				    }
 			  }
 			});
