@@ -9,19 +9,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<script>hljs.initHighlightingOnLoad();
-		$(document).ready(function(){
-			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-			  if(e.relatedTarget['hash'] === '#resume'){
-				  var strconfirm = confirm("I am a developer :D ?");
-				    if (strconfirm == true) {
-				    	$('.nav-tabs a[href="#resume"]').tab('show')
-				    }else {
-					    $('.nav-tabs a[href="#resume"]').tab('hide')
-				    	$('.nav-tabs a[href="#pdf-resume"]').tab('show')
-				    }
-			  }
-			});
-		});
 	</script>
 	<style>.close{margin-left: 10px}</style>
 	<meta charset="utf8">
@@ -30,8 +17,8 @@
 
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
-	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume</a></li>
-		<li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>PDF Resume</a></li>
+	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.scala</a></li>
+		<li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>Resume.pdf</a></li>
 	</ul>
 
 	<div class="tab-content">
