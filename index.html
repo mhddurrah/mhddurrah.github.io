@@ -11,7 +11,9 @@
 	<script>hljs.initHighlightingOnLoad();
 		$(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-			  alert(e.relatedTarget['hash']);
+			  if(e.relatedTarget['hash'] === '#hash'){
+				  
+			  }
 			});
 		})();
 	</script>
@@ -19,9 +21,26 @@
 	<meta charset="utf8">
 </head>
 <body style="font-size:16px; margin: 48px 48px; display:inline">
+	<div class="modal fade" tabindex="-1" role="dialog">
+	  <div class="modal-dialog" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<h4 class="modal-title">Modal title</h4>
+	      </div>
+	      <div class="modal-body">
+		<p>One fine body&hellip;</p>
+	      </div>
+	      <div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Save changes</button>
+	      </div>
+	    </div><!-- /.modal-content -->
+	  </div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
-	  <li><a data-toggle="tab" id="resume" href="#home"><button class="close">×</button>Resume</a></li>
+	  <li><a data-toggle="tab" id="resume" href="#resume"><button class="close">×</button>Resume</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -39,7 +58,7 @@
 		</div>
 	  </div>
 
-	  <div id="home" class="tab-pane fade">
+	  <div id="resume" class="tab-pane fade">
 		<pre style="background-color:#dddddd; margin-top:0;">
 		<code class="scala" style="background-color:#dddddd">
 		import Traits._
