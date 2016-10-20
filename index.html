@@ -12,7 +12,7 @@
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#hash'){
-				  $('#modal').modal({});
+				  $('#modal').modal('show');
 			  }
 			});
 		});
