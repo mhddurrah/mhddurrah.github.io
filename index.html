@@ -11,7 +11,9 @@
 	<script>hljs.initHighlightingOnLoad();
 		$(document).ready(function(){
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
-			  
+			  if(e.relatedTarget['hash'] === '#hash'){
+				  $('#modal').modal({});
+			  }
 			});
 		});
 	</script>
