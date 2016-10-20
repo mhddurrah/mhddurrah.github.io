@@ -13,9 +13,9 @@
 			$('a[data-toggle="tab"]').on('hide.bs.tab', function (e) {
 			  if(e.relatedTarget['hash'] === '#resume'){
 				  var strconfirm = confirm("Are you sure you are a developer :D ?");
-				    if (strconfirm) {
-					alert('hi');
-				    }else alert('bye');
+				    if (strconfirm == false) {
+				    	$('.tab-pane a[href="#pdf-resume"]').tab('show')
+				    }
 			  }
 			});
 		});
@@ -24,26 +24,11 @@
 	<meta charset="utf8">
 </head>
 <body style="font-size:16px; margin: 48px 48px; display: inline">
-	<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
-	  <div class="modal-dialog" role="document">
-	    <div class="modal-content">
-	      <div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		<h4 class="modal-title">Are you a developer?</h4>
-	      </div>
-	      <div class="modal-body">
-		<p>I am a developer <img  height="50px" src="https://www.askideas.com/media/76/Funny-Meme-Faces-4.jpg"/></p>
-	      </div>
-	      <div class="modal-footer">
-		<button type="button" class="btn btn-default" data-dismiss="modal">Yeah</button>
-		<button type="button" class="btn btn-primary">No</button>
-	      </div>
-	    </div><!-- /.modal-content -->
-	  </div><!-- /.modal-dialog -->
-	</div><!-- /.modal -->
+
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
 	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume</a></li>
+		<li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>PDF Resume</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -184,5 +169,8 @@
 	</code></pre>
 	  </div>
 	</div>
+		<div id="pdf-resume">
+		
+		</div>
 </body>
 </html>
