@@ -61,22 +61,21 @@
 
 		  val summary =
 		    """
-			A Software developer with 5 years of industry experience with Java, PHP, Web,
+			A Software developer with 5 years of industry experience with Java, Java Web,
 		      and enterprise development, Resourceful in managing all aspects of the
 		      requirement study & analysis, suggesting technology-based solutions, design,
-		      development, testing, deployment and implementation of business solutions
+		      development, testing, deployment and implementation of business solutions.
 			"""
 		  val more = "I am enthusiast to java technologies and jvm languages in general, Vertx, scala, spark and hadoop."
 
 		  def education() = {
 		    (new Education).of("Bachelor of Computer Science")
 		      .at("Faculty of IT").university("Damascus University").from(2004).to(2010)
-
 		  }
 
 		  def experience() = {
 		    Seq(
-		     (new Position).at("Amadeus IT Group").title("Senior Software Developer")
+		      (new Position).at("Amadeus IT Group").title("Senior Software Developer")
 		     	.from("May 2017").to(new Date).location("Istanbul, Turkey")
 			.responsibilities(
 			"""
