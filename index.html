@@ -38,11 +38,11 @@
 
 	  <div id="resume" class="tab-pane fade">
 		<pre style="background-color:#dddddd; margin-top:0;">
-		<code class="scala" style="background-color:#dddddd">
-		import Traits._
-		import Skills.{Java, Php}
+			<code class="scala" style="background-color:#dddddd">
+				import Traits._
+		import Skills.{Java}
 
-		SoftwareDeveloper[L <: Java with Php] extends HumanBeing[Syrian] with SoftwareEngineer {
+		SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
 
 		  import java.util.{Calendar, Date}
 
@@ -94,20 +94,6 @@
 				- Android backend and frontend design and development, messaging with
 				      MQTT, REST clients with Volley and ION, database access with GreenDAO.
           		"""),
-      		      (new Position).at("Freelancing").title("Web, API & Android Developer")
-        		.from("Jan 2011").to(Aug 2017")
-       			.responsibilities(
-         		 """
-				- Development of several websites and php web services with Laravel
-				      framework, AngularJS, Smarty Template engine, wordpress templates and plugins
-					* http://easylease.sa
-					* http://kiyadah.com/
-					* http://tanzeemuae.com/
-				- Participate in Customization and Development of Zurmo® CRM built with YII framework
-					* http://uae.sellanycar.com/
-					- Android developer
-						* Argaam Streamer: Saudi Arabia Stock Market, Business & Financial News mobile app
-		  	"""),
 	      	      (new Position).at("Invest4all").title("Java EE Application Developer")
 			.from("Jan 2011").to("May 2013").location("Damascus, Syria")
 			.responsibilities(
@@ -120,50 +106,50 @@
 					user interface (Javascript, RaphaëlJS)
 				- RBAC security model implementation
 		  	""")
-	    )
-	  }
+		    )
+		  }
 
-	  def languages = {
-	    mutable.Map(
-	      "Arabic" -> Language.NATIVE,
-	      "English" -> Language.PROFESSIONAL_WORKING_PROFICIENCY,
-	      "Turkish" -> Language.ELEMENTARY
-	    )
-	  }
+		  def languages = {
+		    mutable.Map(
+		      "Arabic" -> Language.NATIVE,
+		      "English" -> Language.PROFESSIONAL_WORKING_PROFICIENCY,
+		      "Turkish" -> Language.ELEMENTARY
+		    )
+		  }
 
-	  def specialities = {
-	    import Skills._
-	    mutable.Map(Java -> 95, JSF -> 90, Hibernate -> 75, OSGi -> 80, Spring -> 60, Android -> 80, Laravel -> 90, Wordpress -> 85)
-	  }
+		  def specialities = {
+		    import Skills._
+		    mutable.Map(Java -> 95, JSF -> 90, Hibernate -> 75, OSGi -> 80, Spring -> 60, Android -> 80)
+		  }
 
-	  def skills = {
-	    import Skills._
-	    import mutable._
-	    Set(
-	      Set(DesignPatterns, JavaSE, JavaEE) OSGi, Scala, JSF, Primefaces),
-	      Set(EJB, Hibernate, JPA, Spring, Jersey, Servlets, JUnit, Android),
-	      Set(Wordpress, Magento, Laravel, YII, AngularJS, Smarty, JQuery, YUI),
-	      Set(MongoDB, MySQL, Neo4J, Oracle),
-	      Set(Java3D, VRML, RaphaëlJS),
-	      Set(Subversion, Git),
-	      Set(WebSockets, MQTT),
-	      Set(Hadoop, Spark, Vertx)
-	    )
-	  }
+		  def skills = {
+		    import Skills._
+		    import immutable._
+		    Set(
+		      Set(DesignPatterns, JavaSE, JavaEE, OSGi, Scala, JSF, Primefaces),
+		      Set(EJB, Hibernate, JPA, Spring, Jersey, Servlets, JUnit, Android),
+		      Set(MongoDB, MySQL, Neo4J, Oracle),
+		      Set(Java3D, VRML, RaphaëlJS),
+		      Set(Subversion, Git),
+		      Set(WebSockets, MQTT),
+		      Set(Hadoop, Spark, Vertx)
+		    )
+		  }
 
-	  def references = {
-	    Set(
-		(new Reference).name("Mr. Tammam Fadel")
-		.position("Invest4all project manager")
-		.email("tammam.fadel.ca@gmail.com").mobile(new BigDecimal(001 _514_967_7104))
-	      )
-	  }
+		  def references = {
+		    Set(
+			(new Reference).name("Mr. Tammam Fadel")
+			.position("Invest4all project manager")
+			.email("tammam.fadel.ca@gmail.com").mobile(new BigDecimal(001 _514_967_7104))
+		      )
+		  }
 
-	  def open = {
-	    true
-	  }
-	}
-	</code></pre>
+		  def open = {
+		    false
+		  }
+		}
+			</code>
+		</pre>
 	  </div>
 		  <div id="pdf-resume" class="tab-pane fade">
 			  <object data="MOHAMD DORRA.pdf" type="application/pdf" width="100%" height="100%">
