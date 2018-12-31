@@ -48,14 +48,14 @@ SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
 
   val birthdate = Calendar.getInstance().set(1985, Calendar.NOVEMBER, 15)
 
-  val address = "Esenyurt, Istanbul, Turkey"
+  val address = "Istanbul, Turkey"
 
   object ContactInfo {
     val email = "mhd.durrah@gmail"
     val mobile: BigDecimal = BigDecimal(0090_535_783_7663)
   }
 
-  val social = Map("Linkedin" -> "https://www.linkedin.com/in/mhddurrah", "Github" -> "https://www.github.com/mhddurrah")
+  val social = Map("Linkedin" -> "https://www.linkedin.com/in/mhddurrah", "Github" -> "https://www.github.com/mhddurrah", "Medium" -> "https://medium.com/@mhd.durrah")
 
   val motivation = "Being a software engineer means that you must be as flexible as possible to keep up with new technologies."
 
@@ -66,7 +66,7 @@ SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
       requirement study & analysis, suggesting technology-based solutions, design,
       development, testing, deployment and implementation of business solutions.
 	"""
-  val more = "I am enthusiast to java technologies and jvm languages in general, Vertx, scala, spark and hadoop."
+  val more = "I am enthusiast to java technologies and jvm technologies Vertx, Scala, Spark and Hadoop."
 
   def education() = {
     (new Education).of("Bachelor of Computer Science")
