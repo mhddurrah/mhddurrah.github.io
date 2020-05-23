@@ -17,8 +17,9 @@
 
 	<ul class="nav nav-tabs">
 	  <li class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
-	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.scala</a></li>
-		<li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>Resume.pdf</a></li>
+	  <!-- <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.scala</a></li> -->
+	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.java</a></li>
+	 <li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>Resume.pdf</a></li>
 	</ul>
 
 	<div class="tab-content">
@@ -38,42 +39,46 @@
 
 	  <div id="resume" class="tab-pane fade">
 		<pre style="background-color:#dddddd; margin-top:0;font-size:18px;">
-			<code class="scala" style="background-color:#dddddd">
-import Traits._
-import Skills.{Java}
+			<code class="java" style="background-color:#dddddd">
+import com.google.common.collect.ImmutableMap;
 
-SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
+SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; implements SoftwareEngineer {
 
-  import java.util.{Calendar, Date}
+  public static final Date birthdate = Calendar.getInstance().set(1985, Calendar.NOVEMBER, 15).getTime();
 
-  val birthdate = Calendar.getInstance().set(1985, Calendar.NOVEMBER, 15)
+  public String address() { return "Istanbul, Turkey";}
 
-  val address = "Istanbul, Turkey"
-
-  object ContactInfo {
-    val email = "mhd.durrah@gmail"
-    val mobile: BigDecimal = BigDecimal(0090_535_783_7663)
+  public class ContactInfo {
+    public String email() {return "mhd.durrah@gmail.com";}
+    public String mobile() {return "+90 535 783 76 63";}
   }
 
-  val social = Map("Linkedin" -> "https://www.linkedin.com/in/mhddurrah", "Github" -> "https://www.github.com/mhddurrah", "Medium" -> "https://medium.com/@mhd.durrah")
+  //@formatter:off
+  public static final Map&lt;String, String&gt = 
+  					ImmutableMap.of(
+  						"Linkedin" , "https://www.linkedin.com/in/mhddurrah",
+  						"Github", "https://www.github.com/mhddurrah", 
+  						"Medium", "https://medium.com/@mhd.durrah"
+  					);
+  //@formatter:on
 
-  val motivation = "Being a software engineer means that you must be as flexible as possible to keep up with new technologies."
+  public String summary() {
+    return """
+			A Software Engineer with 9+ years of industry experience with Java, Web, and enterprise
+		development, Resourceful in managing all aspects of the requirement analysis,
+		suggesting technology-based solutions, design, development, testing, deployment and
+		implementation of business solutions. 
+		"""
+  }
+  public String more() {return "I am enthusiast to java technologies and jvm technologies Vertx, Scala, Spark and Hadoop.";}
 
-  val summary =
-    """
-	A Software developer with 5 years of industry experience with Java, Java Web,
-      and enterprise development, Resourceful in managing all aspects of the
-      requirement study & analysis, suggesting technology-based solutions, design,
-      development, testing, deployment and implementation of business solutions.
-	"""
-  val more = "I am enthusiast to java technologies and jvm technologies Vertx, Scala, Spark and Hadoop."
-
-  def education() = {
-    (new Education).of("Bachelor of Computer Science")
-      .at("Faculty of IT").university("Damascus University").from(2004).to(2010)
+  public Education education() {
+    return Education.of("Bachelor of Computer Science")
+      .at("Faculty of IT").university("Damascus University").from(2004).to(2010);
   }
 
-  def experience() = {
+  public Set&lt;Experience&gt; experiences() {
+
     Seq(
       (new Position).at("Amadeus IT Group").title("Senior Software Developer")
 	.from("May 2017").to(new Date).location("Istanbul, Turkey")
@@ -108,11 +113,11 @@ SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
     )
   }
 
-  def languages = {
-    mutable.Map(
-      "Arabic" -> Language.NATIVE,
-      "English" -> Language.PROFESSIONAL_WORKING_PROFICIENCY,
-      "Turkish" -> Language.ELEMENTARY
+  public Map&lt;String, Profecency&gt; languages = {
+    return ImmutableMap.of(
+      "Arabic" , Language.NATIVE,
+      "English" , Language.PROFESSIONAL_WORKING_PROFICIENCY,
+      "Turkish" , Language.ELEMENTARY
     )
   }
 
@@ -143,8 +148,8 @@ SoftwareDeveloper[L <: Java] extends HumanBeing[Syrian] with SoftwareEngineer {
       )
   }
 
-  def open = {
-    false
+  public boolen openToOpportunities() {
+    return true;
   }
 }
 			</code>
