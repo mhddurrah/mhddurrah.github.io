@@ -40,6 +40,10 @@
 	  <div id="resume" class="tab-pane fade">
 		<pre style="background-color:#dddddd; margin-top:0;font-size:18px;">
 			<code class="java" style="background-color:#dddddd">
+import java.util.Date;
+import java.util.Calendar;
+import java.util.Set;
+import java.util.Map;
 import com.google.common.collect.ImmutableMap;
 
 SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; implements SoftwareEngineer {
@@ -49,18 +53,9 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
   public String address() { return "Istanbul, Turkey";}
 
   public class ContactInfo {
-    public String email() {return "mhd.durrah@gmail.com";}
-    public String mobile() {return "+90 535 783 76 63";}
+	    public String email()  {return "mhd.durrah@gmail.com";}
+	    public String mobile() {return "+90 535 783 76 63";}
   }
-
-  //@formatter:off
-  public static final Map&lt;String, String&gt = 
-  					ImmutableMap.of(
-  						"Linkedin" , "https://www.linkedin.com/in/mhddurrah",
-  						"Github", "https://www.github.com/mhddurrah", 
-  						"Medium", "https://medium.com/@mhd.durrah"
-  					);
-  //@formatter:on
 
   public String summary() {
     return """
@@ -70,47 +65,69 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
 		implementation of business solutions. 
 		"""
   }
-  public String more() {return "I am enthusiast to java technologies and jvm technologies Vertx, Scala, Spark and Hadoop.";}
+
+  //@formatter:off
+  public static final Map&lt;String, String&gt = 
+  					ImmutableMap.of(
+  						"Linkedin" , "https://www.linkedin.com/in/mhddurrah",
+  						"Github", "https://www.github.com/mhddurrah", 
+  						"Medium", "https://medium.com/@mhd.durrah",
+  						"Website", "http://mhddurrah.github.io/"
+  					);
+  //@formatter:on
+
+
+  public Set&lt;Set&lt;String&gt;&gt; skills() {
+  	var skills= new Set&lt;&gt;();
+   	skills.addAll(Arrays.asList("Software Architecture", "Java SE", "Spring", "Spring Boot");
+   	skills.addAll(Arrays.asList("JPA", "Hibernate", "EJB", "JSF", "Primefaces");
+   	skills.addAll(Arrays.asList("REST API", "OSGi", "Git");
+	skills.addAll(Arrays.asList("Team Work", "Work Ethic");
+	skills.addAll(Arrays.asList("MongoDB", "MySQL", "Oracle", "Postgres");
+
+	skills.addAll(Arrays.asList("Kafka", "Hadoop", "Spark", "Vertx", "Kotlin");
+    
+    return skills;
+  }
+
+  public Set&lt;Experience&gt; experiences() {
+  	return Strean.of(
+			Position.at("Amadeus IT Group")
+				   	.title("Software Development Engineer")
+				   	.location("Istanbul, Turkey")
+					.from("May 2017").to(new Date().toString())
+					.responsibilities(
+						"Loyalty Community Project (LOY) Core Modules and Architecture.",
+						"Stabilizing and optimizing Batch processing jobs.",
+						"Software Principles and Design Patterns trainer"
+					),
+			Position.at("Kancy Smart Home")
+					.title("Software Development Engineer")
+					.location("Istanbul, Turkey")
+				    .from("Nov 2014").to("May 2017")
+					.responsibilities(
+						"Leading the Analysis, Design and Development of Kancy Smart homes SaaS platform "
+						+ "with Spring Framework, Eclipse Runtime, ActiveMQ,Cassandra and Hibernate on AWS.",
+						"Integration of Apache ActiveMQ with the custom OSGi runtime to achieve real-time "
+						+ "communication and monitoring.",
+						"Development of Android client application including MQTT communications, UI "
+						+ "customization and database abstraction."
+					),
+			Position.at("Kancy Smart Home")
+					.title("Software Development Engineer")
+					.location("Istanbul, Turkey")
+				    .from("Nov 2014").to("May 2017")
+					.responsibilities(
+						"Contribute in System Analysis and Development of business process"
+						+ "streamliner with EJB, web services and Hibernate in backend, JSF and"
+						+ "Primefaces components for frontend. "
+					)
+  			).collect(Collectors.toSet());
+   }
 
   public Education education() {
     return Education.of("Bachelor of Computer Science")
       .at("Faculty of IT").university("Damascus University").from(2004).to(2010);
-  }
-
-  public Set&lt;Experience&gt; experiences() {
-
-    Seq(
-      (new Position).at("Amadeus IT Group").title("Senior Software Developer")
-	.from("May 2017").to(new Date).location("Istanbul, Turkey")
-	.responsibilities(
-	"""
-		Loyalty Community Project (LOY) Core Modules and Architecture.
-	""")
-	,
-      (new Position).at("Kancy").title("Senior Java Developer")
-	.from("Nov 2014").to("May 2017").location("Istanbul, Turkey")
-	.responsibilities(
-	  """
-		- Contribute in adapting OpenHAB (Home Automation Bus) built over
-		      Eclipse Equinox (OSGi implementation)
-		- Participate in Analysis, Design and Development of kancy system runtime
-		      with EclipseRT, JAX-WS and REST-api with Jersey
-		- Android backend and frontend design and development, messaging with
-		      MQTT, REST clients with Volley and ION, database access with GreenDAO.
-	"""),
-      (new Position).at("Invest4all").title("Java EE Application Developer")
-	.from("Jan 2011").to("May 2013").location("Damascus, Syria")
-	.responsibilities(
-	"""
-		- Contribute in System Analysis and Development of business process
-			management system built with EJB, webservices and Hibernate in
-			backend; JSF and Primefaces components for frontend
-		- Workflow designer path designer that can be used by business process
-			owners to easily create a workflow definition through a web-based
-			user interface (Javascript, RaphaëlJS)
-		- RBAC security model implementation
-	""")
-    )
   }
 
   public Map&lt;String, Profecency&gt; languages = {
@@ -121,31 +138,19 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
     )
   }
 
-  def specialities = {
-    import Skills._
-    mutable.Map(Java -> 95, JSF -> 90, Hibernate -> 75, OSGi -> 80, Spring -> 60, Android -> 80)
-  }
 
-  def skills = {
-    import Skills._
-    import immutable._
-    Set(
-      Set(DesignPatterns, JavaSE, JavaEE, OSGi, Scala, JSF, Primefaces),
-      Set(EJB, Hibernate, JPA, Spring, Jersey, Servlets, JUnit, Android),
-      Set(MongoDB, MySQL, Neo4J, Oracle),
-      Set(Java3D, VRML, RaphaëlJS),
-      Set(Subversion, Git),
-      Set(WebSockets, MQTT),
-      Set(Hadoop, Spark, Vertx)
-    )
-  }
-
-  def references = {
-    Set(
-	(new Reference).name("Mr. Tammam Fadel")
-	.position("Invest4all project manager")
-	.email("tammam.fadel.ca@gmail.com").mobile(new BigDecimal(001 _514_967_7104))
-      )
+  public Set<Reference> references() {
+    return new HashSet&lt;&gt;(){
+	 	add(
+		 	new Reference.Builder()
+		 	.name("Mr. Tammam Fadel")
+			.position("Invest4all project manager")
+			.email("tammam.fadel.ca@gmail.com")
+			.mobile("+1 514 967 7104")
+			.build()
+		);
+		add(Reference.UPON_REQUEST);
+      }
   }
 
   public boolen openToOpportunities() {
