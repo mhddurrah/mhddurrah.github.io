@@ -22,7 +22,14 @@
 			var urlParams = new URLSearchParams(window.location.search);
 
 			var active = urlParams.get('tab');
+			
+			var tabs = ['welcome','resume','pdf','bachelor','bachelor-original'];
+
 			active = active || 'welcome';
+			if(tabs.indexOf(active) == -1){
+				active = 'welcome';
+				urlParams.set('tab', 'welcome')
+			}
 		
 
 			$('ul.nav-tabs > li').removeClass('active');
@@ -31,6 +38,8 @@
 			$('div.tab-content > div').removeClass('active').addClass('fade');
 			$('div.tab-content > div#'+ active).removeClass('fade').addClass('active');
 
+
+			$('ul.nav-tabs > li').on('click', function(evt){window.location.search = '?tab='+$(this).attr('id').replace('-li','');});
 		});
 	</script>
 	<style>.close{margin-left: 10px}</style>
