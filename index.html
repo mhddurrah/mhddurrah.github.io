@@ -16,7 +16,22 @@
 	<meta name="msapplication-TileColor" content="#ffffff">
 	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
 	<meta name="theme-color" content="#ffffff">
-	<script>hljs.initHighlightingOnLoad();
+	<script>
+		hljs.initHighlightingOnLoad();
+		$(document).ready(function(){
+			var urlParams = new URLSearchParams(window.location.search);
+
+			var active = urlParams.get('tab');
+			active = active || 'welcome';
+		
+
+			$('ul.nav-tabs > li').removeClass('active');
+			$('ul.nav-tabs > li#'+ active+'-li').addClass('active');
+
+			$('div.tab-content > div').removeClass('active').addClass('fade');
+			$('div.tab-content > div#'+ active).removeClass('fade').addClass('active');
+
+		});
 	</script>
 	<style>.close{margin-left: 10px}</style>
 	<meta charset="utf8">
@@ -24,16 +39,20 @@
 <body style="font-size:16px; margin: 48px 48px; display: inline">
 
 	<ul class="nav nav-tabs">
-	  <li class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
+	  <li id="welcome-li" class="active"><a data-toggle="tab" href="#welcome"><button class="close">×</button>Welcome</a></li>
 	  <!-- <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.scala</a></li> -->
-	  <li><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.java</a></li>
-	 <li><a data-toggle="tab" href="#pdf-resume"><button class="close">×</button>Resume.pdf</a></li>
+	  <li id="resume-li"><a data-toggle="tab" href="#resume"><button class="close">×</button>Resume.java</a></li>
+	  <li id="pdf-li"><a data-toggle="tab" href="#pdf"><button class="close">×</button>Resume.pdf</a></li>
+	  <li id="bachelor-li"><a data-toggle="tab" href="#bachelor"><button class="close">×</button>Bachelor.jpg</a></li>
+	  <li id="bachelor-original-li"><a data-toggle="tab" href="#bachelor-original"><button class="close">×</button>Bachelor Arabic.jpg</a></li>
 	</ul>
 
 	<div class="tab-content">
 	  <div id="welcome" class="tab-pane fade in active" style="background-color:#eeeede;">
 		<div class="panel">
 		<h1>Welcome!</h1>
+		<h2>Mohamd Dorra</h2>
+		<h2>SoftwareDeveloper implements SoftwareEngineer{}</h2>
 		<h2>You can reach me through the available connections:</h2>
 		<ul>
 			<li><a target="_new" href="https://www.linkedin.com/in/mhddurrah"><span>Linkedin</span><i class="fa fa-linkedin-square"></i></a></li>
@@ -105,9 +124,9 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
 				   	.location("Istanbul, Turkey")
 					.from("May 2017").to(new Date().toString())
 					.responsibilities(
-						"Loyalty Community Project (LOY) Core Modules and Architecture.",
-						"Stabilizing and optimizing Batch processing jobs.",
-						"Software Principles and Design Patterns trainer"
+						"Key stakeholder in evolving multiple modules of Loyalty Community Project (LOY);" +" Membership management, Data Exportation, Billing and Accounting.",
+						"Stabilizing and optimizing batch processing jobs.",
+						"Training Software Principles and Design Patterns."
 					),
 			Position.at("Kancy Smart Home")
 					.title("Software Development Engineer")
@@ -126,7 +145,7 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
 					.location("Istanbul, Turkey")
 				    .from("Nov 2014").to("May 2017")
 					.responsibilities(
-						"Contribute in System Analysis and Development of business process"
+						"Contribution in System Analysis and Development of business process"
 						+ "streamliner with EJB, web services and Hibernate in backend, JSF and"
 						+ "Primefaces components for frontend. "
 					)
@@ -168,7 +187,13 @@ SoftwareDeveloper&lt;? extends Java&gt; extends HumanBeing&lt;Syrian&gt; impleme
 			</code>
 		</pre>
 	  </div>
-		  <div id="pdf-resume" class="tab-pane fade">
+	  <div id="bachelor" class="tab-pane fade">
+			  <img src="licence-turkish.jpg" width="100%">
+		</div>
+		<div id="bachelor-original" class="tab-pane fade">
+			  <img src="licence-origin.jpg" width="100%">
+		</div>
+	  	<div id="pdf" class="tab-pane fade">
 			  <object data="MOHAMD DORRA.pdf" type="application/pdf" width="100%" height="100%">
 				  <p><a target="_new" href="https://goo.gl/tcj9JJ">Download</a></p>
 				</object>
